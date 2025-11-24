@@ -1,0 +1,45 @@
+# String types
+myself: Ashish Singh
+fruit: "Apple"
+job: "swe"
+
+# this is how we write in multi line.
+bio: |
+  hey my name is Ashish Singh,
+  I am a swe.
+
+# write a single line in multiple lines
+name: >
+  Ashish
+  Singh.
+
+# same as
+message: Ashish Singh
+
+number: 5473
+marks: 98.76
+booleanValue: No # n,  N, false, FALSE, False
+#same for true --> Yes, y, YES
+
+# specify the type
+zero: !!int 0
+postitiveNumber: !!int +5
+negativeNumber: !!int -5
+commaValue: !!int +540_000 #540, 000
+exponential number: 6.023E56
+
+#floating point number
+floatMarks: !!float 56.89
+infinite: !!float .inf
+
+not a num: .nan
+#null
+surname: !!null NULL #or null NULL ~
+~: this is a null key
+
+# timestamp
+canonical: 2001-12-15T02:59:43.1Z
+valid iso8601: 2001-12-14t21:59:43.10-05:00
+space separated: 2001-12-14 21:59:43.10 -5
+no time zone (Z): 2001-12-15 2:59:43.10
+date (00:00:00Z): 2002-12-14

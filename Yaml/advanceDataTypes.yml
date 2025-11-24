@@ -1,0 +1,143 @@
+student: !!seq
+  - marks
+  - name
+  - rollno
+
+# like this also
+cities: [new delhi, mumbai]
+# some of the keys of the sequence will be empty
+# sparse sequence
+sparse seq:
+  - hey
+  - how
+  -
+  - NULL
+  - sup
+# nested sequences
+---
+- - rollnumber
+  - date
+
+- - how are you
+  - I am good
+  - - yoo
+    - yes
+- - yoo
+  - bro
+
+---
+# key: value pairs are maps !!map
+# nested mappings
+name: Ashish singh
+role:
+  age: 26
+  job: swe
+# same as
+---
+name: Ashish Singh
+role: { age: 26, job: swe }
+#pairs: key may have duplicates
+# !!pairs
+pair example: !!pairs
+  - job: student
+  - job: teacher
+---
+pair example: !!pairs [job: student, job: teacher]
+# in JSON
+# {
+#   "pair example": [
+#     [
+#       "job",
+#       "student"
+#     ],
+#     [
+#       "job",
+#       "teacher"
+#     ]
+#   ]
+# }
+---
+## set will allow you to have unique values !!set case sensitive value
+name: !!set
+  ? Ashish
+  ? Rahul
+  ? Ajay
+  ? ashish
+
+---
+#dictionary: !!omap
+People: !!omap
+  - Ashish:
+      - name: Ashish
+      - age: 25
+      - height: 5'11
+  - Rahul:
+      - name: Rahul
+      - age: 23
+      - heigh: 5'6
+# same JSON as this
+# {
+#   "People": [
+#     {
+#       "Ashish": [
+#         {
+#           "name": "Ashish"
+#         },
+#         {
+#           "age": 25
+#         },
+#         {
+#           "height": "5'11"
+#         }
+#       ]
+#     },
+#     {
+#       "Rahul": [
+#         {
+#           "name": "Rahul"
+#         },
+#         {
+#           "age": 23
+#         },
+#         {
+#           "heigh": "5'6"
+#         }
+#       ]
+#     }
+#   ]
+# }
+---
+# resuing some properties using anchoirs
+likings: &likes
+  - fav fruit: mango
+  - dislikes: apple
+
+person1:
+  name: Ashish
+  <<: *likes
+
+person2:
+  name: Ashish
+  <<: *likes
+  dislikes: berries
+# JSON like below
+# {
+#   "likings": [
+#     {
+#       "fav fruit": "mango"
+#     },
+#     {
+#       "dislikes": "apple"
+#     }
+#   ],
+#   "person1": {
+#     "name": "Ashish",
+#     "fav fruit": "mango",
+#     "dislikes": "apple"
+#   },
+#   "person2": {
+#     "name": "Ashish",
+#     "fav fruit": "mango",
+#     "dislikes": "berries"
+#   }
+# }

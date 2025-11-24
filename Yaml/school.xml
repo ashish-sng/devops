@@ -1,0 +1,19 @@
+<?xml version="1.0" encounding="utf-8"?>
+<school>
+  <name>DPS</name>
+  <principal>someone</principal>
+  <students>
+    <name>ashish</name>
+    <rollNo>23</rollNo>
+    <marks>98</marks>
+  </students>
+</school>
+<school>
+  <name>DPS 2</name>
+  <principal>someone 2</principal>
+  <students>
+    <name>ashish 2</name>
+    <rollNo>23</rollNo>
+    <marks>98</marks>
+  </students>
+</school>

@@ -1,0 +1,17 @@
+"apple": "I am a red fruit"
+1: "This is Ashish"
+---
+#lists
+- apple
+- Apple
+#Document seprator
+---
+cities:
+  - Delhi
+  - Mumbai
+  - Lucknow
+---
+cities2: [Delhi, Mumbai, lucknow]
+---
+{ mango: fruit yellow, age: 56 }
+#Document end
